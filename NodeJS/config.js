@@ -65,7 +65,39 @@ app.delete('/data/:id', (req, res) => {
   });
 });
 
+// Configure Multer storage
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
 
+// Create Multer upload instance
+const upload = multer({ storage });
+
+// Define a POST route for file uploads
+app.post('/upload', upload.single('file'), (req, res) => {
+  if (!req.file) {
+    res.status(400).send('No file uploaded.');
+    return;
+  }
+  
+  const file = req.file;
+  
+  // Save the file details to the database
+  const query = 'INSERT INTO user (name, mimetype, size) VALUES (?, ?, ?)';
+  connection.query(query, [file.originalname, file.mimetype, file.size], (err, result) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+    } else {
+      res.send('File uploaded successfully!');
+    }
+  });
+});
 
 // Start the server
 app.listen(port, () => {
