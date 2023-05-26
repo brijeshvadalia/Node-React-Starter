@@ -54,6 +54,17 @@ app.put('/data/:id', (req, res) => {
   });
 });
 
+// Delete an item
+app.delete('/data/:id', (req, res) => {
+  const itemId = req.params.id;
+  connection.query('DELETE FROM user WHERE id = ?', itemId, (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.send('Item deleted successfully');
+  });
+});
+
 
 
 // Start the server
