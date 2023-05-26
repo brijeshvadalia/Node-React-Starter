@@ -42,6 +42,19 @@ app.post('/data', (req, res) => {
   });
 });
 
+// Update an item
+app.put('/data/:id', (req, res) => {
+  const itemId = req.params.id;
+  const updatedItem = req.body;
+  connection.query('UPDATE user SET ? WHERE id = ?', [updatedItem, itemId], (err, result) => {
+    if (err) {
+      throw err;
+    }
+    res.send('Item updated successfully');
+  });
+});
+
+
 
 // Start the server
 app.listen(port, () => {
