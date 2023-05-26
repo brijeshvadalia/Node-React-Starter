@@ -31,6 +31,16 @@ app.get('/data', (req, res) => {
   });
 });
 
+// POST request to insert data into MySQL
+app.post('/data', (req, res) => {
+  const { Firstname, Password } = req.body; // Assuming Firstname and Password are the data fields that i want to insert
+  const values = [Firstname, Password];
+
+  connection.query('INSERT INTO user (Firstname, Password) VALUES (?, ?)', values, (err, result) => {
+    if (err) throw err;
+    res.send('Data inserted successfully');
+  });
+});
 
 
 // Start the server
