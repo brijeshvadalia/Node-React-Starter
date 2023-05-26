@@ -23,6 +23,15 @@ connection.connect(err => {
   console.log('Connected to MySQL database');
 });
 
+// GET request to fetch data from MySQL
+app.get('/data', (req, res) => {
+  connection.query('SELECT * FROM user', (err, rows) => {
+    if (err) throw err;
+    res.send(rows);
+  });
+});
+
+
 
 // Start the server
 app.listen(port, () => {
