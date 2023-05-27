@@ -1,0 +1,23 @@
+.main-div{
+  width: 98%;
+  float: left;
+  border: 2px solid black;
+  margin-left: 3px;
+  padding: 10px;
+}
+h1{
+  text-align: center  ;
+}
+.first-div{
+  width: 50%;
+  float: left;
+}
+
+.second-div{
+  width: 50%;
+  float: left;
+}
+img{
+  width: 80%;
+  height: 90%;
+}
