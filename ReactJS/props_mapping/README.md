@@ -48,9 +48,9 @@
 >![BADGE](https://img.shields.io/badge/VERCEL-VERCEL-blue)
 
 
-<!-- # HERE IS THE PREVIEW HOW THIS PROJECT LOOKS😍
-># [LIVE [HOSTED] PROJECT LINK](https://brijesh8128-react-mapping.vercel.app/ "React Webpage")
->![Screenshot](./screenshot/screenshot-1.png) -->
+# HERE IS THE PREVIEW HOW THIS PROJECT LOOKS😍
+># [LIVE [HOSTED] PROJECT LINK](https://brijesh8128-props-mapping.vercel.app/ "React Webpage")
+>![Screenshot](./screenshot/screenshot-1.png)
 
 
 >## For any query you can reach out at brijeshvadaliya1@gmail.com I am happy to help 😎
