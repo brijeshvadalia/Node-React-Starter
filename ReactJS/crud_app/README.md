@@ -1,2 +1,2 @@
 # CRUD APP
- - Get Method Completed
+ - Get Method Completed [Read]
